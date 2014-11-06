@@ -11,11 +11,9 @@
         "email": "skysunshine99@126.com"
     },
     "dependencies": {
-        "comment-json": "^0.1.11",
         "json-parser": "^0.2.4",
         "mace": "^2.0.0",
-        "mockjs": "^0.1.4",
-        "swig": "^1.4.2"
+        "mockjs": "^0.1.4"
     },
     "repository": {
         "type": "git",

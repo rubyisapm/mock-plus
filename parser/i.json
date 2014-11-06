@@ -1,0 +1,129 @@
+{
+  "// name": [
+    [
+      "//名字"
+    ]
+  ],
+  "name": {
+    "first|@FIRST": "ruby",
+    "last|@LAST": "huang"
+  },
+  "// hobby": [
+    [
+      "//兴趣爱好"
+    ]
+  ],
+  "hobby": [
+    "roller skating",
+    "reading",
+    "swimming"
+  ],
+  "// address": [
+    [
+      "//所在地",
+      "/*现居地址*/"
+    ]
+  ],
+  "address": {
+    "area|@AREA": "华东",
+    "region|@REGION": "浙江"
+  },
+  "// email|@EMAIL": [
+    [
+      "//邮箱",
+      "/*注册邮箱*/"
+    ]
+  ],
+  "email|@EMAIL": "skysunshine99@126.com",
+  "// icon|@IMAGE('200x100', '#00405d', '#FFF', 'Mock.js')": [
+    [
+      "//头像",
+      "/*社区网站头像*/"
+    ]
+  ],
+  "icon|@IMAGE('200x100', '#00405d', '#FFF', 'Mock.js')": "http://www.ruby.com/ruby.png",
+  "// food|@PICK(['cookie','water','wine'])": [
+    [
+      "//喜欢的食物"
+    ]
+  ],
+  "food|@PICK(['cookie','water','wine'])": "cookie",
+  "// date|@DATE('yyyy-MM-dd')": [
+    [
+      "//注册日期"
+    ]
+  ],
+  "date|@DATE('yyyy-MM-dd')": "2014-01-01",
+  "// space|@URL": [
+    [
+      "//个人主页",
+      "/*个人中心地址*/"
+    ]
+  ],
+  "space|@URL": "http://www.ruby.i",
+  "// sentence|@SENTENCE(10)": [
+    [
+      "//喜欢的一句话"
+    ]
+  ],
+  "sentence|@SENTENCE(10)": "Enjoy what you have",
+  "// age|@NATURAL(10,27)": [
+    [
+      "//年龄"
+    ]
+  ],
+  "age|@NATURAL(10,27)": 27,
+  "// powers": [
+    [
+      "//网站权限",
+      "/*在该网站的权限*/"
+    ]
+  ],
+  "powers": {
+    "// community": [
+      [
+        "//社区权限"
+      ]
+    ],
+    "community": {
+      "// read|@BOOLEAN(1,6,false)": [
+        [
+          "//浏览权限",
+          "//是否可浏览社区文章"
+        ]
+      ],
+      "read|@BOOLEAN(1,6,false)": true,
+      "// write": [
+        [
+          "//发布权限",
+          "/*是否可以发布文章*/"
+        ]
+      ],
+      "write": true
+    },
+    "// manage": [
+      [
+        "//管理权限"
+      ]
+    ],
+    "manage": {
+      "// read|10-1": [
+        [
+          "//查看用户权限",
+          "/*是否可查看用户信息*/"
+        ]
+      ],
+      "read|10-1": true,
+      "// write|1": [
+        [
+          "//操作用户权限",
+          "/*是否可以对用户进行增删改操作*/"
+        ]
+      ],
+      "write|1": false
+    }
+  },
+  "//^": [
+    "/**\r\n * 关于该接口的描述...\r\n * */"
+  ]
+}
