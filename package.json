@@ -1,0 +1,25 @@
+{
+    "name": "mock-plus",
+    "version": "0.0.1",
+    "description": "more convenient to generate data for front-end testing",
+    "main": "export.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": {
+        "name": "ruby",
+        "email": "skysunshine99@126.com"
+    },
+    "dependencies": {
+        "comment-json": "^0.1.11",
+        "json-parser": "^0.2.4",
+        "mace": "^2.0.0",
+        "mockjs": "^0.1.4",
+        "swig": "^1.4.2"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/rubyisapm/mock-plus"
+    },
+    "main":"/export.js"
+}

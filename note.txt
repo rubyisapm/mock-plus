@@ -1,0 +1,12 @@
+数据类型判断:
+boolean
+integer (natural,pick) -9007199254740992 -  9007199254740992
+float(pick) -9007199254740992 - 9007199254740992 0-17
+string (character，date，time,datetime,now ,image,dataImage,color,capitalize,upper,
+lower,paragraph,sentence,word,title,first,last,name,url,domain,email,ip,tld,area,region,guid,id,pick)
+array (range,shuffle)
+
+object
+
+只判断到前面这些类型，详细的规则需要自定义。如email|@email:'skysunshine99@126.com' 那么接口文档输出还是
+类型为string，但规则为@email

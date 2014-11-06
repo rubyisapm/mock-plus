@@ -1,0 +1,16 @@
+{"name": {
+    "first": "Brenda",
+    "last": "Harris"
+}, "hobby": ["roller skating", "reading", "swimming"], "address": {
+    "area": "华南",
+    "region": "广东省"
+}, "email": "r.lopez@brown.edu", "icon": "http://dummyimage.com/200x100/00405d/FFF&text=Mock.js", "food": "wine", "date": "2009-11-09", "space": "http://pfhvgbggp.edu/evsp", "sentence": "Meibo ovewmof okfbryikja cih kqpiqq zeelpzj otkw akbvoyyv vvne xgxkgj.", "age": 11, "powers": {
+    "community": {
+        "read": true,
+        "write": false
+    },
+    "manage": {
+        "read": true,
+        "write": false
+    }
+}}
