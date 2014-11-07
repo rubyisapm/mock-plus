@@ -1,0 +1,28 @@
+{
+  "name": {
+    "last": "White"
+  },
+  "hobby": [
+    "roller skating",
+    "reading",
+    "swimming",
+    "roller skating",
+    "reading",
+    "swimming"
+  ],
+  "address": {
+    "area": "西南"
+  },
+  "email": "r.perez@thomas.org",
+  "icon": "http://dummyimage.com/200x100/00405d/FFF&text=Mock.js",
+  "food": "wine",
+  "date": "2011-11-01",
+  "space": "http://wnfyeou.org/dcdrphs",
+  "sentence": "Jiupfmkbyl pku jmvxrhwzr mroj rakqbkpi ntgliflb nmq tfqc swxoztcfgf aonqm.",
+  "age": 14,
+  "powers": {
+    "community": {
+      "read": true
+    }
+  }
+}

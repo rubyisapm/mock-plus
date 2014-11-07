@@ -22,7 +22,7 @@ exports.options={
     }
 }
 exports.config=function(ops){
-    exports.options=util.merge(exports.options,ops);
+    exports.options.mockRule=util.merge(exports.options.mockRule,ops);
 }
 
 /*helper*/
@@ -74,6 +74,9 @@ helper.type=function(data){
     }
 }
 
+exports.getRule=function(){
+    return exports.options.mockRule;
+}
 exports.mockInit=function(data,result){
     //生成mock模板
     var result=typeof result!='undefined' ? result : {};
@@ -184,9 +187,7 @@ exports.docInit=function(data){
 exports.toDoc=function(input,output){
     //生成md文件
     var data=jsonParser.parse(fs.readFileSync(input,'utf-8'));
-    fs.writeFileSync(__dirname+'/parser/i.json',JSON.stringify(data,null,2));
     var result=exports.analysis(data);
-    fs.writeFileSync(__dirname+'/analysis/i.json',JSON.stringify(result,null,2));
     var interfaceInfo=exports.getInterfaceInfo(data);
     var doc=exports.docInit(result);
     var docHead=['###接口描述文档','> * 接口类型:'+interfaceInfo.interfaceType,'> * 接口描述:'+interfaceInfo.topComment].join('\n');
@@ -207,7 +208,3 @@ exports.generator=function(input,output){
     var mockData=Mock.mock(tpl);
     fs.writeFileSync(output,JSON.stringify(mockData,null,2));
 }
-
-exports.toDoc(__dirname+'/json/i.json',__dirname + '/doc/i.md');
-exports.toMock(__dirname+'/json/i.json',__dirname + '/mock/i.json');
-exports.generator(__dirname+'/json/i.json',__dirname+'/mockData/i.json');

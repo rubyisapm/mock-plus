@@ -18,6 +18,5 @@
     "repository": {
         "type": "git",
         "url": "git://github.com/rubyisapm/mock-plus"
-    },
-    "main":"/export.js"
+    }
 }

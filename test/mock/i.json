@@ -1,0 +1,32 @@
+{
+  "name|1": {
+    "first": "@FIRST",
+    "last": "@LAST"
+  },
+  "hobby|1-10": [
+    "roller skating",
+    "reading",
+    "swimming"
+  ],
+  "address|1": {
+    "area": "@AREA",
+    "region": "@REGION"
+  },
+  "email": "@EMAIL",
+  "icon": "@IMAGE('200x100', '#00405d', '#FFF', 'Mock.js')",
+  "food": "@PICK(['cookie','water','wine'])",
+  "date": "@DATE('yyyy-MM-dd')",
+  "space": "@URL",
+  "sentence": "@SENTENCE(10)",
+  "age": "@NATURAL(10,27)",
+  "powers|1": {
+    "community|1": {
+      "read": "@BOOLEAN(1,6,false)",
+      "write|1-10": true
+    },
+    "manage|1": {
+      "read|10-1": true,
+      "write|1": false
+    }
+  }
+}
