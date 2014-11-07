@@ -1,8 +1,17 @@
 {
   "name": {
-    "last": "White"
+    "last": "Hernandez"
   },
   "hobby": [
+    "roller skating",
+    "reading",
+    "swimming",
+    "roller skating",
+    "reading",
+    "swimming",
+    "roller skating",
+    "reading",
+    "swimming",
     "roller skating",
     "reading",
     "swimming",
@@ -11,18 +20,18 @@
     "swimming"
   ],
   "address": {
-    "area": "西南"
+    "area": "东北"
   },
-  "email": "r.perez@thomas.org",
+  "email": "x.williams@martinez.gov",
   "icon": "http://dummyimage.com/200x100/00405d/FFF&text=Mock.js",
-  "food": "wine",
-  "date": "2011-11-01",
-  "space": "http://wnfyeou.org/dcdrphs",
-  "sentence": "Jiupfmkbyl pku jmvxrhwzr mroj rakqbkpi ntgliflb nmq tfqc swxoztcfgf aonqm.",
-  "age": 14,
+  "food": "water",
+  "date": "2005-01-03",
+  "space": "http://itllif.org/nbiilgv",
+  "sentence": "Iij twmvgd iisoax xiylrblvg cvstrr tajwij ccvvss yjpq ibkqkm mwdoebpp.",
+  "age": 24,
   "powers": {
-    "community": {
-      "read": true
+    "manage": {
+      "write": true
     }
   }
 }
