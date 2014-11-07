@@ -33,12 +33,18 @@ helper.isComment=function(key){
         return true;
     }
 }
+helper.isTopComment=function(key){
+    //判断是否为整个数据的开头注释
+    if(/^\/\/\^/.test(key)){
+        return true;
+    }
+}
 helper.getComment=function(obj,key){
     if(helper.type(obj)=='object' && '// '+key in obj){
         var topComments=obj['// '+key][0];
         return {
             title:(typeof topComments[0]!='undefined') ? topComments[0].replace(/\/\/\s*/,'') : '-',
-            desc:(typeof topComments[1]!='undefined') ? topComments[1].replace(/(\/|\*|\s)*/g,'') : '-'
+            desc:(typeof topComments[1]!='undefined') ? topComments[1].replace(/(\/|\*|\s|\r|\n)*/g,'') : '-'
         }
     }else{
         return {
@@ -110,11 +116,21 @@ exports.mockInit=function(data,result){
     }
     return result;
 }
+exports.getInterfaceInfo=function(data){
+    if('//^' in data){
+        var topComment=data['//^'][0].replace(/(\/|\*|\s|\r|\n)*/g,'');
+    }
+    return {
+        topComment:topComment || '无',
+        interfaceType:helper.type(data)
+    }
+}
 exports.analysis=function(data){
     /*将数据和注释进行格式化，用于生成markdown*/
-    var result={};
+    var interfaceType=helper.type(data);
+    var result=interfaceType==='object' ? {} :[];
     for(var i in data){
-        if(!(helper.isComment(i)) && i!='_layer'){
+        if(!helper.isTopComment(i) && !(helper.isComment(i)) && i!='_layer'){
             var comments=helper.getComment(data,i);
             var keyInfo=helper.getKeyInfo(i);
             var key=keyInfo.key;
@@ -168,16 +184,20 @@ exports.docInit=function(data){
 exports.toDoc=function(input,output){
     //生成md文件
     var data=jsonParser.parse(fs.readFileSync(input,'utf-8'));
+    fs.writeFileSync(__dirname+'/parser/i.json',JSON.stringify(data,null,2));
     var result=exports.analysis(data);
+    fs.writeFileSync(__dirname+'/analysis/i.json',JSON.stringify(result,null,2));
+    var interfaceInfo=exports.getInterfaceInfo(data);
     var doc=exports.docInit(result);
-    fs.writeFileSync(output,'###接口描述\n'+doc);
+    var docHead=['###接口描述文档','> * 接口类型:'+interfaceInfo.interfaceType,'> * 接口描述:'+interfaceInfo.topComment].join('\n');
+    fs.writeFileSync(output,docHead+'\n\n'+doc);
 }
 
 exports.toMock=function(input,output){
     //生成mock模板
     var data=jsonParser.parse(fs.readFileSync(input,'utf-8'));
     var tpl=exports.mockInit(data);
-    fs.writeFileSync(output,JSON.stringify(tpl));
+    fs.writeFileSync(output,JSON.stringify(tpl,null,2));
 }
 
 exports.generator=function(input,output){
@@ -185,9 +205,9 @@ exports.generator=function(input,output){
     var data=jsonParser.parse(fs.readFileSync(input,'utf-8'));
     var tpl=exports.mockInit(data);
     var mockData=Mock.mock(tpl);
-    fs.writeFileSync(output,JSON.stringify(mockData));
+    fs.writeFileSync(output,JSON.stringify(mockData,null,2));
 }
 
-//exports.toDoc(__dirname+'/json/i.json',__dirname + '/doc/i.md');
-//exports.toMock(__dirname+'/json/i.json',__dirname + '/mock/i.json');
-//exports.generator(__dirname+'/json/i.json',__dirname+'/mockData/i.json');
+exports.toDoc(__dirname+'/json/i.json',__dirname + '/doc/i.md');
+exports.toMock(__dirname+'/json/i.json',__dirname + '/mock/i.json');
+exports.generator(__dirname+'/json/i.json',__dirname+'/mockData/i.json');
